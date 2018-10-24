@@ -47,6 +47,7 @@ knex.schema.hasTable('items').then((exists) => {
   }
 });
 
+module.exports = knex;
 
 
 
