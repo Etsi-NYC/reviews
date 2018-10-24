@@ -1,3 +1,5 @@
+let dummyData = require('./dummyData');
+
 var knex = require('knex')({
   client: 'mysql',
   connection: {
@@ -8,8 +10,9 @@ var knex = require('knex')({
   }
 });
 
+console.log('about to create tables');
+
 knex.schema.hasTable('items').then((exists) => {
-  console.log(exists);
   if (!exists) {
     console.log('items table doesn\'t exist')
     knex.schema.createTable('items', (table) => {
@@ -19,9 +22,9 @@ knex.schema.hasTable('items').then((exists) => {
     })
       .then((table) => {
         console.log('items table created');
-        knex('items').insert({name:'Birdhouse', id:1, image_path: 'www.google.com/birdhouseimage'})
+        knex.batchInsert('items', dummyData.items)
           .then(() => {
-            console.log('item inserted')
+            console.log('items inserted')
             knex.schema.hasTable('reviews').then((exists) => {
               if (!exists) {
                 knex.schema.createTable('reviews', (table) => {
@@ -34,8 +37,8 @@ knex.schema.hasTable('items').then((exists) => {
                 })
                   .then((table) => {
                     console.log('reviews table created');
-                    knex('reviews').insert({username: 'Josh', date: '1991-01-01', rating: 4.5, comment: 'this is a comment', item_id: 1})
-                      .then((insertId) => console.log(`review inserted at row ${insertId}`))
+                    knex.batchInsert('reviews', dummyData.reviews)
+                      .then((ids) => console.log(`review inserted at row ${ids}`))
                   })
               }
             })
