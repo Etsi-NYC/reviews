@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import StarRating from './starRating.jsx';
 
 const StyledWrapper = styled.div`
+  border-bottom: 1px solid #e1e3df;
+  padding-bottom: 1.29rem;
   overflow: auto;
 `
 
@@ -69,6 +71,18 @@ const ItemPhoto = styled.img`
 const ItemName = styled.div`
   display: inline-block;
   font-size: 0.87rem;
+ 
+  // :hover {
+  //   text-decoration: underline;
+  // }
+`
+const Link = styled.a`
+  :not(:hover) {
+    text-decoration-line: none;
+  }
+  :visited {
+    color: black;
+  }
 `
 
 class Review extends React.Component {
@@ -81,7 +95,7 @@ class Review extends React.Component {
       <StyledWrapper>
         <Author>
           <ProfilePic src="https://www.zooportraits.com/wp-content/uploads/2018/05/Koala-Phascolarctos-Cinereus.jpg" />
-          <div>Reviewed by: <br></br>Mr. Koala</div>
+          <div>Reviewed by: <br></br><Link href='/'>Mr. Koala</Link></div>
         </Author>
         <Details>
           <div id='review_header'>
@@ -91,7 +105,7 @@ class Review extends React.Component {
           <Comment>ex non occaecat nulla reprehenderit sunt veniam pariatur enim ad officia quis magna nisi laboris officia ex est labore nostrud duis nisi nisi ad ex qui minim est cupidatat qui commodo excepteur laborum</Comment>
           <Item>
             <ItemPhoto src="https://s3.us-east-2.amazonaws.com/hack-reactor-etsi/boots.JPG"/>
-            <ItemName>Boots</ItemName>
+            <ItemName><Link href='/'>Boots</Link></ItemName>
           </Item>
         </Details>
       </StyledWrapper>

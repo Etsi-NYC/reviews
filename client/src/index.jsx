@@ -28,7 +28,7 @@ const AggregateRating = styled.span`
 `
 
 const Count = styled.span`
-  color: dimgrey;
+  color: #595959;
   font-size: .875rem;
   top: -0.2rem;
   position: relative;
