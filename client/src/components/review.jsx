@@ -2,9 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import StarRating from './starRating.jsx';
 
-const StyledWrapper = styled.div`
+const StyledWrapper = styled.li`
   border-bottom: 1px solid #e1e3df;
   padding-bottom: 1.29rem;
+  margin-bottom: 1.29rem;
+  padding-inline-start: 0px;
   overflow: auto;
 `
 
@@ -113,4 +115,7 @@ class Review extends React.Component {
   }
 }
 
-export default Review;
+// export default Review;
+
+module.exports.Review = Review;
+module.exports.StyledWrapper = StyledWrapper;
