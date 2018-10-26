@@ -16,5 +16,26 @@ const fetchReviewsById = (id) => {
   })
 }
 
+const fetchAverageRatingById = (id) => {
+  return new Promise((resolve, reject) => {
+    knex('reviews').avg('rating').where({item_id: id})
+      .then((result) => resolve(result))
+      .catch((err) => reject(err));
+  })
+}
+
+const fetchReviewImagePathsById = (id) => {
+  return new Promise((resolve, reject) => {
+    knex('reviews').select('image_path').where({item_id: id}).whereNotNull('image_path')
+      .then((result) => resolve(result))
+      .catch((err) => reject(err));
+  })
+}
+
+// fetchAverageRatingById(1).then((result) => console.log(result));
+// fetchReviewImagePathsById(1).then((result) => console.log(result));
+
 module.exports.itemNameToId = itemNameToId;
 module.exports.fetchReviewsById = fetchReviewsById;
+module.exports.fetchAverageRatingById = fetchAverageRatingById;
+module.exports.fetchReviewImagePathsById = fetchReviewImagePathsById;

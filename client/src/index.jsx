@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import StarRating from './components/starRating.jsx';
 import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
+import axios from 'axios'
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
@@ -115,6 +116,15 @@ class Reviews extends React.Component {
       showMore: false
     };
     this.handleShowMoreClick = this.handleShowMoreClick.bind(this);
+  }
+  componentDidMount() {
+    axios.get('/reviews', {
+      params: {
+        id: 1
+      }
+    })
+    .then((response) => this.setState({reviews: response.data}))
+    .catch((err) => console.log(err));
   }
   handleShowMoreClick() {
     this.setState(prevState => ({

@@ -34,6 +34,7 @@ knex.schema.hasTable('items').then((exists) => {
                   table.integer('item_id');
                   table.foreign('item_id').references('id').inTable('items');
                   table.string('comment', 2000);
+                  table.string('image_path');
                 })
                   .then((table) => {
                     console.log('reviews table created');

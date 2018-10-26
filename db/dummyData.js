@@ -18,12 +18,14 @@ for (let i = 0; i < 10; i++) {
   let rating = [5, 3.5, 4, 4.5][i % 4];
   let comment = lorem({count: 100, units: 'words'});
   let item_id = [1,2][i % 2];
+  let image_path = 'http://www.politicalmetaphors.com/wp-content/uploads/2015/04/blog-shapes-square-windows.jpg';
   reviews.push({
     username,
     date: '1991-01-01',
     rating,
     item_id,
-    comment
+    comment,
+    image_path
   })
 }
 

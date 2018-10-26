@@ -11,18 +11,32 @@ app.use(express.static(path.join(__dirname, './../client/dist')));
 
 app.get('/', (req, res) => res.send('Hello world!'));
 
+const fetchAndSendReviewsInfo = (id, res) => {
+  Promise.all([
+    models.fetchReviewsById(id),
+    models.fetchAverageRatingById(id),
+    models.fetchReviewImagePathsById(id)
+  ])
+  .then((values) => {
+    var reviewInfo = {
+      reviews: values[0],
+      averageRating: values[1][0]['avg(`rating`)'],
+      imagePaths: values[2].map((obj) => obj.image_path)
+    }
+    console.log(reviewInfo);
+    res.send(reviewInfo);
+  })
+}
+
 app.get('/reviews', (req, res) => {
   console.log(req.query.id);
   if (!req.query.id && !req.query.name) res.status(400).send('Must include either item ID or item name in query')
   if (!req.query.id) {
     models.itemNameToId(req.query.name)
-      .then((id) => {
-        return models.fetchReviewsById(id)
-      })
-      .then((reviews) => res.send(reviews));
+      .then((id) => fetchAndSendReviewsInfo(id, res))
+      .catch((err) => console.log(err));
   } else {
-    models.fetchReviewsById(req.query.id)
-      .then((reviews) => res.send(reviews));
+    fetchAndSendReviewsInfo(req.query.id, res)
   }
 })
 
