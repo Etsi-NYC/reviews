@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import {Review, StyledWrapper} from './components/review.jsx';
 import styled from 'styled-components';
 import StarRating from './components/starRating.jsx';
+import Carousel from './components/carousel.jsx'
 import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
 import axios from 'axios'
@@ -154,7 +155,8 @@ class Reviews extends React.Component {
           <MoreLink onClick={this.handleShowMoreClick} visible={!this.state.showMore}>+ More</MoreLink>
           <AllReviewsButton visible={this.state.showMore} href='/'>Read All Reviews ({this.state.reviewCount})</AllReviewsButton>
           <PhotosFromReviewsTitle>Photos from reviews</PhotosFromReviewsTitle>
-          {photos.map((photo) => <PhotofromReviews src="https://is1-ssl.mzstatic.com/image/thumb/Purple71/v4/47/cf/cf/47cfcf79-9e1d-b21f-8e10-2658b7650c15/mzl.oiljceng.png/246x0w.jpg"/>)}
+          <Carousel></Carousel>
+          {/* {photos.map((photo) => <PhotofromReviews src="https://is1-ssl.mzstatic.com/image/thumb/Purple71/v4/47/cf/cf/47cfcf79-9e1d-b21f-8e10-2658b7650c15/mzl.oiljceng.png/246x0w.jpg"/>)} */}
         </StyledDiv>
       </React.Fragment>
     )
