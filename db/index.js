@@ -29,12 +29,14 @@ knex.schema.hasTable('items').then((exists) => {
               if (!exists) {
                 knex.schema.createTable('reviews', (table) => {
                   table.string('username');
+                  table.string('profile_pic_path');
                   table.date('date');
                   table.decimal('rating');
                   table.integer('item_id');
                   table.foreign('item_id').references('id').inTable('items');
                   table.string('comment', 2000);
                   table.string('image_path');
+                  table.integer('review_id');
                 })
                   .then((table) => {
                     console.log('reviews table created');

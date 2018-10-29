@@ -113,7 +113,8 @@ class Reviews extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showMore: false
+      showMore: false,
+      reviews: [{date: ''}]
     };
     this.handleShowMoreClick = this.handleShowMoreClick.bind(this);
   }
@@ -123,7 +124,14 @@ class Reviews extends React.Component {
         id: 1
       }
     })
-    .then((response) => this.setState({reviews: response.data}))
+    .then((response) => {
+      this.setState({
+        reviews: response.data.reviews,
+        averageRating: response.data.averageRating,
+        reviewImages: response.data.imagePaths,
+        reviewCount: response.data.reviewCount
+      }); 
+    })
     .catch((err) => console.log(err));
   }
   handleShowMoreClick() {
@@ -137,14 +145,14 @@ class Reviews extends React.Component {
         <GlobalStyle/>
         <StyledDiv>
           <Header>
-            <Title>Reviews</Title><AggregateRating><StarRating rating={3.5}/></AggregateRating><Count>(202)</Count>
+            <Title>Reviews</Title><AggregateRating><StarRating rating={this.state.averageRating}/></AggregateRating><Count>({this.state.reviewCount})</Count>
           </Header>
           <ReviewsList showMore={this.state.showMore}>
-            {nums.map((num) => <ReviewDiv><Review/></ReviewDiv>)}
+            {this.state.reviews.map((review) => <ReviewDiv><Review review={review}/></ReviewDiv>)}
             <FadeGradient visible={!this.state.showMore}/> 
           </ReviewsList>
           <MoreLink onClick={this.handleShowMoreClick} visible={!this.state.showMore}>+ More</MoreLink>
-          <AllReviewsButton visible={this.state.showMore} href='/'>Read All Reviews (202)</AllReviewsButton>
+          <AllReviewsButton visible={this.state.showMore} href='/'>Read All Reviews ({this.state.reviewCount})</AllReviewsButton>
           <PhotosFromReviewsTitle>Photos from reviews</PhotosFromReviewsTitle>
           {photos.map((photo) => <PhotofromReviews src="https://is1-ssl.mzstatic.com/image/thumb/Purple71/v4/47/cf/cf/47cfcf79-9e1d-b21f-8e10-2658b7650c15/mzl.oiljceng.png/246x0w.jpg"/>)}
         </StyledDiv>

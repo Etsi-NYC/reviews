@@ -15,15 +15,16 @@ const fetchAndSendReviewsInfo = (id, res) => {
   Promise.all([
     models.fetchReviewsById(id),
     models.fetchAverageRatingById(id),
-    models.fetchReviewImagePathsById(id)
+    models.fetchReviewImagePathsById(id),
+    models.fetchReviewCountById(id)
   ])
   .then((values) => {
     var reviewInfo = {
       reviews: values[0],
       averageRating: values[1][0]['avg(`rating`)'],
-      imagePaths: values[2].map((obj) => obj.image_path)
+      imagePaths: values[2].map((obj) => obj.image_path),
+      reviewCount: values[3][0]['count(`rating`)']
     }
-    console.log(reviewInfo);
     res.send(reviewInfo);
   })
 }

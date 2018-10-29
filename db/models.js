@@ -8,9 +8,17 @@ const itemNameToId = (name) => {
   });
 }
 
+const fetchReviewCountById = (id) => {
+  return new Promise((resolve, reject) => {
+    knex('reviews').count('rating').where({'item_id': id})
+      .then((result) => resolve(result))
+      .catch((err) => reject(err));
+  })
+}
+
 const fetchReviewsById = (id) => {
   return new Promise((resolve, reject) => {
-    knex.from('reviews').innerJoin('items', 'reviews.item_id', 'items.id').where({'items.id': id})
+    knex.from('reviews').innerJoin('items', 'reviews.item_id', 'items.id').where({'items.id': id}).limit(10)
       .then((result) => resolve(result))
       .catch((err) => reject(err));
   })
@@ -33,9 +41,12 @@ const fetchReviewImagePathsById = (id) => {
 }
 
 // fetchAverageRatingById(1).then((result) => console.log(result));
-// fetchReviewImagePathsById(1).then((result) => console.log(result));
+// countReviewsById(1).then((result) => console.log(result));
 
-module.exports.itemNameToId = itemNameToId;
-module.exports.fetchReviewsById = fetchReviewsById;
-module.exports.fetchAverageRatingById = fetchAverageRatingById;
-module.exports.fetchReviewImagePathsById = fetchReviewImagePathsById;
+module.exports = {
+  itemNameToId,
+  fetchReviewsById,
+  fetchAverageRatingById,
+  fetchReviewImagePathsById,
+  fetchReviewCountById
+};
