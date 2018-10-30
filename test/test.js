@@ -1,35 +1,33 @@
-var expect = require('chai').expect;
-var should = require('chai').should();
 var axios = require('axios');
 
 describe('Reviews API', function() {
-  it('should return reviews data', function(done) {
-    axios.get('http://127.0.0.1:3456/reviews', {
+  test('should return reviews data', function() {
+    return axios.get('http://127.0.0.1:3456/reviews', {
       params: {
         id: 1
       }
     })
     .then((response) => {
-      should.exist(response.data.reviews);
-      expect(response.data.reviews.length).to.equal(10);
+      expect(response.data.reviews).toBeTruthy();
+      expect(response.data.reviews.length).toEqual(10);
       let review = response.data.reviews[0];
-      should.exist(review.username);
-      should.exist(review.profile_pic_path);
-      should.exist(review.date);
-      should.exist(review.rating);
-      should.exist(review.item_id);
-      should.exist(review.comment);
-      should.exist(review.image_path);
-      should.exist(review.name);
-      should.exist(review.id);
+      expect(review.username).toBeTruthy();
+      expect(review.profile_pic_path).toBeTruthy();
+      expect(review.date).toBeTruthy();
+      expect(review.rating).toBeTruthy();
+      expect(review.item_id).toBeTruthy();
+      expect(review.comment).toBeTruthy();
+      expect(review.image_path).toBeTruthy();
+      expect(review.name).toBeTruthy();
+      expect(review.id).toBeTruthy();
 
-      should.exist(response.data.averageRating);
-      expect(response.data.averageRating).to.be.a('Number');
+      expect(response.data.averageRating).toBeTruthy();
+      let averageRatingType = typeof response.data.averageRating;
+      expect(averageRatingType).toMatch(/number/);
 
-      should.exist(response.data.imagePaths);
+      expect(response.data.imagePaths).toBeTruthy();
 
-      done();
     })
-    .catch((err) => done(err))
+    .catch((err) => console.log(err))
   })
 })
