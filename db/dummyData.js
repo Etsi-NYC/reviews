@@ -9,15 +9,6 @@ for (let j = 0; j < 100; j++) {
     image_path: 'https://s3.us-east-2.amazonaws.com/hack-reactor-etsi/boots.JPG'
   })
 }
-// var items = [{
-//   name: 'Boots',
-//   id: 1,
-//   image_path: 'https://s3.us-east-2.amazonaws.com/hack-reactor-etsi/boots.JPG'
-// }, {
-//   name: 'Lasso',
-//   id: 2,
-//   image_path: 'https://s3.us-east-2.amazonaws.com/hack-reactor-etsi/lasso.jpg'
-// }];
 
 var reviews = [];
 
