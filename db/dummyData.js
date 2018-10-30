@@ -37,8 +37,13 @@ for (let k = 0; k < 100; k++) {
       'https://static.pixlee.com/photos/230467187/medium/f805de892f64650e6bc9.jpg',
       'https://di2ponv0v5otw.cloudfront.net/posts/2018/08/29/5b86f3508ad2f9f7e7704240/m_5b86f3601b16dbab44142290.jpg',
       'https://www.americancowboy.com/.image/t_share/MTQ1MDQxNzMxNDQwNzQ4MjYx/boots.jpg',
-      'http://www.medodeal.com/wp-content/uploads/2017/10/western-boots-fancybox-bmtuesq-.jpg'
-    ][i % 4];
+      'http://www.medodeal.com/wp-content/uploads/2017/10/western-boots-fancybox-bmtuesq-.jpg',
+      'https://blog.travis-ci.com/images/2015-josh-boots.jpg',
+      'https://wehearthandmadeboots.com/wp-content/uploads/2018/06/miguel-cowboy-boots-300x300.jpg',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOc3at0H4jg0Lj0jVZ_KuLSCOKwjfDmbQlfHekDR7e6g6QDjvQWA',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTL6DndAujqBXtF_2GZ_KEQvR7N3zEGv9h_OjTlzWtGCHNPb2fEFg',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZnoj-bP5QGWedd0tH-V_EInTEs7_YEudLjecGkiU0P42tnoBp'
+    ][i % 9];
     reviews.push({
       username,
       profile_pic_path,
