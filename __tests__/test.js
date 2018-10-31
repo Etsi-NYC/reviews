@@ -1,8 +1,21 @@
 var axios = require('axios');
+import { shallow, mount, render } from 'enzyme';
+import Reviews from '../client/src/reviews';
+import React from 'react';
+import Review from './../client/src/components/review';
+import StarRating from './../client/src/components/starRating';
+import Carousel from './../client/src/components/carousel'
+
+describe('Front End', function() {
+  test('should render a review component', () => {
+    const wrapper = mount(<Reviews/>);
+    expect(wrapper.find(Reviews).length).toEqual(1);
+  })
+});
 
 describe('Reviews API', function() {
   test('should return reviews data', function() {
-    return axios.get('http://127.0.0.1:3456/reviews', {
+    return axios.get('http://localhost:3456/reviews', {
       params: {
         id: 1
       }

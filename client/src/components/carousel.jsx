@@ -17,8 +17,8 @@ class Carousel extends React.Component {
     };
     return (
         <Slider {...settings}>
-          {this.props.photos.map((photo) => (
-            <div>
+          {this.props.photos.map((photo, idx) => (
+            <div key={photo.idx}>
               <img src={photo} />  
             </div>
           )

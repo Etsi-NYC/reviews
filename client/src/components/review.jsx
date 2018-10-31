@@ -111,7 +111,4 @@ class Review extends React.Component {
   }
 }
 
-// export default Review;
-
-module.exports.Review = Review;
-module.exports.StyledWrapper = StyledWrapper;
+export default Review;
