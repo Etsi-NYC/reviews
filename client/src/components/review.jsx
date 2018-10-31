@@ -98,7 +98,9 @@ class Review extends React.Component {
         <Details>
           <div id='review_header'>
             <Rating><StarRating rating={this.props.review.rating}/></Rating>
+            {this.props.review.date && 
             <Date>{this.props.review.date.slice(0,10)}</Date>
+            }
           </div>
           <Comment>{this.props.review.comment}</Comment>
           <Item>

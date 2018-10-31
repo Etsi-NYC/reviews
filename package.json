@@ -41,8 +41,10 @@
     "chai": "^4.2.0",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.6.0",
+    "enzyme-to-json": "^3.3.4",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
     "jest": "^23.6.0",
+    "jest-styled-components": "^6.2.2",
     "mocha": "^5.2.0",
     "morgan": "^1.9.1",
     "regenerator-runtime": "^0.12.1"

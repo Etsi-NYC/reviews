@@ -139,14 +139,14 @@ class Reviews extends React.Component {
   }
   render() {
     return (
-      <React.Fragment>
+      <div>
         <GlobalStyle/>
         <StyledDiv>
           <Header>
             <Title>Reviews</Title><AggregateRating><StarRating rating={this.state.averageRating}/></AggregateRating><Count>({this.state.reviewCount})</Count>
           </Header>
           <ReviewsList showMore={this.state.showMore}>
-            {this.state.reviews.map((review) => <ReviewDiv><Review review={review}/></ReviewDiv>)}
+            {this.state.reviews.map((review, idx) => <ReviewDiv key={idx}><Review review={review}/></ReviewDiv>)}
             <FadeGradient visible={!this.state.showMore}/> 
           </ReviewsList>
           <MoreLink onClick={this.handleShowMoreClick} visible={!this.state.showMore}>+ More</MoreLink>
@@ -154,10 +154,15 @@ class Reviews extends React.Component {
           <PhotosFromReviewsTitle>Photos from reviews</PhotosFromReviewsTitle>
           <Carousel photos={this.state.reviewImages}></Carousel>
         </StyledDiv>
-      </React.Fragment>
+      </div>
     )
   }
 }
 
-export default Reviews;
+module.exports = {
+  Reviews,
+  MoreLink,
+  AllReviewsButton,
+  ReviewDiv
+}
 
