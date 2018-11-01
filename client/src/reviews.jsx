@@ -14,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const StyledDiv = styled.div`
-  width: 70%;
+  width: 100%;
   font-family: 'Roboto', sans-serif;
   box-sizing: border-box;
   line-height: 1.57rem;
