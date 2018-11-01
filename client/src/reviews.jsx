@@ -117,7 +117,7 @@ class Reviews extends React.Component {
     this.handleShowMoreClick = this.handleShowMoreClick.bind(this);
   }
   componentDidMount() {
-    axios.get('/reviews', {
+    axios.get('http://localhost:3001/reviews', {
       params: {
         id: 1
       }

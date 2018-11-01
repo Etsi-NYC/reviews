@@ -44,5 +44,5 @@ app.get('/reviews', (req, res) => {
   }
 })
 
-var port = process.env.PORT || 3456;
+var port = process.env.PORT || 3001;
 app.listen(port, () => console.log(`Server now listening on port ${port}`));
