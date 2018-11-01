@@ -11,7 +11,8 @@ const StyledWrapper = styled.li`
 `
 
 const Author = styled.div`
-  display: block;
+  display: flex;
+  flex-direction: column;
   float:left;
   vertical-align: top;
   margin: auto;
@@ -30,6 +31,10 @@ const ProfilePic = styled.img`
   height: auto;
   margin: 0 auto;
   margin-bottom: 0.5rem;
+`
+
+const ReviewedBy = styled.div`
+
 `
 
 const Details = styled.div`
@@ -93,7 +98,7 @@ class Review extends React.Component {
       <StyledWrapper>
         <Author>
           <ProfilePic src={this.props.review.profile_pic_path} />
-          <div>Reviewed by: <br></br><Link href='/'>{this.props.review.username}</Link></div>
+          <ReviewedBy>Reviewed by: <br></br><Link href='/'>{this.props.review.username}</Link></ReviewedBy>
         </Author>
         <Details>
           <div id='review_header'>
