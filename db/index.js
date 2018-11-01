@@ -3,9 +3,10 @@ let dummyData = require('./dummyData');
 var knex = require('knex')({
   client: 'mysql',
   connection: {
-    host : '127.0.0.1',
-    user : 'root',
-    password : '',
+    host : 'etsi-reviews.cb68qk7hektm.us-east-2.rds.amazonaws.com',
+    port : 3287,
+    user : 'mrwnt10',
+    password : 'etsietsi',
     database : 'etsi_reviews'
   }
 });
