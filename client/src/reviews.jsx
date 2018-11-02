@@ -6,7 +6,7 @@ import Carousel from './components/carousel.jsx'
 import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
 import axios from 'axios';
-let styled = window.styled;
+import styled from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
