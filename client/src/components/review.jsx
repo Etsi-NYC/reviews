@@ -1,6 +1,5 @@
 import React from 'react';
-// import styled from 'styled-components';
-let styled = window.styled;
+import styled from 'styled-components';
 import StarRating from './starRating.jsx';
 
 const StyledWrapper = styled.li`
