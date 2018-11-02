@@ -8,53 +8,100 @@ import reset from 'styled-reset';
 import axios from 'axios';
 let styled = window.styled;
 
-const GlobalStyle = createGlobalStyle`
-  ${reset}
-  /* other styles */
-`
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
 
-const StyledDiv = styled.div`
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.StyledDiv1 {
   width: 100%;
   font-family: 'Roboto', sans-serif;
   box-sizing: border-box;
   line-height: 1.57rem;
   padding-top: 1.5rem;
-`
+}
 
-const ReviewDiv = styled.div`
+
+.ReviewDiv {
   display: block;
-`
+}
 
-const Header = styled.div`
+
+.Header {
   padding-bottom: 1.28em;
-`
-const Title = styled.div`
+}
+
+
+.Title {
   display: inline-block;
   font-weight: bold;
   margin-right: .83rem;
   font-size: 1rem;
-`
+}
 
-const AggregateRating = styled.span`
+.AggregateRating {
   margin-right: .83rem;
-  
-`
+}
 
-const Count = styled.span`
+.Count {
   color: #595959;
   font-size: .875rem;
   top: -0.2rem;
   position: relative;
-`
+}
 
-const ReviewsList = styled.ul`
+.ReviewsList = {
   position: relative; 
-  & ${ReviewDiv}:nth-child(n + 5)  {
+  div:nth-child(n + 5)  {
     display: ${props => props.showMore ? 'block' : 'none'};
   };
-`
+}
 
-const FadeGradient = styled.div`
+.FadeGradient {
   display: ${props => props.visible ? 'block' : 'none'};
   position:absolute;
   z-index:2;
@@ -67,9 +114,9 @@ const FadeGradient = styled.div`
   background: -o-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 70%);
   background: -ms-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 70%);
   background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 70%);
-`
+}
 
-const MoreLink = styled.a`
+.MoreLink {
   display: ${props => props.visible ? 'block' : 'none'}; 
   font-size: 1rem;
   font-weight: bold;
@@ -79,9 +126,9 @@ const MoreLink = styled.a`
   :hover {
     color: #595959;
   }
-`
+}
 
-const AllReviewsButton = styled.button`
+.AllReviewsButton {
   background: black;
   color: white;
   display: ${props => props.visible ? 'block' : 'none'}; 
@@ -91,20 +138,13 @@ const AllReviewsButton = styled.button`
   border-radius: 0.21rem; 
   cursor: pointer;
   border: black;
-`
+}
 
-const PhotosFromReviewsTitle = styled.div`
+.PhotosFromReviewsTitle {
   font-size: 1rem;
   padding: 1.28rem 0 0.86rem 0;
   font-weight: 500;
-`
-
-const PhotofromReviews = styled.img`
-  padding: 0rem 1.29rem 0.64rem 0;
-  float: left;
-  width: 7.11rem;
-  height: auto;
-`
+} 
 
 class Reviews extends React.Component {
   constructor(props) {
@@ -138,21 +178,18 @@ class Reviews extends React.Component {
   }
   render() {
     return (
-      <div>
-        <GlobalStyle/>
-        <StyledDiv>
-          <Header>
-            <Title>Reviews</Title><AggregateRating><StarRating rating={this.state.averageRating}/></AggregateRating><Count>({this.state.reviewCount})</Count>
-          </Header>
-          <ReviewsList showMore={this.state.showMore}>
-            {this.state.reviews.map((review, idx) => <ReviewDiv key={idx}><Review review={review}/></ReviewDiv>)}
-            <FadeGradient visible={!this.state.showMore}/> 
-          </ReviewsList>
-          <MoreLink onClick={this.handleShowMoreClick} visible={!this.state.showMore}>+ More</MoreLink>
-          <AllReviewsButton visible={this.state.showMore} href='/'>Read All Reviews ({this.state.reviewCount})</AllReviewsButton>
-          <PhotosFromReviewsTitle>Photos from reviews</PhotosFromReviewsTitle>
-          <Carousel photos={this.state.reviewImages}></Carousel>
-        </StyledDiv>
+      <div className="StyledDiv1">
+        <div className="Header">
+          <div className="Title">Reviews</div><span className="AggregateRating"><StarRating rating={this.state.averageRating}/></span><span className="Count">({this.state.reviewCount})</span>
+        </div>
+        <ul>showMore={this.state.showMore}>
+          {this.state.reviews.map((review, idx) => <div className="ReviewDiv" key={idx}><Review review={review}/></div>)}
+          <div visible={!this.state.showMore}></div>
+        </ul> 
+        <a className="MoreLink" onClick={this.handleShowMoreClick} visible={!this.state.showMore}>+ More</a>
+        <button className="AllReviewsButton" visible={this.state.showMore} href='/'>Read All Reviews ({this.state.reviewCount})</button>
+        <div className="PhotosFromReviewsTitle">Photos from reviews</div>
+        <Carousel photos={this.state.reviewImages}></Carousel>
       </div>
     )
   }
