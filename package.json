@@ -13,7 +13,7 @@
     "seed": "mysql -u root -p < db/init.sql && node db/index.js",
     "test": "jest --env=jsdom",
     "connect": "ssh -i reviewsServiceKey.pem ubuntu@ec2-18-191-75-80.us-east-2.compute.amazonaws.com",
-    "start": "webpack && pm2 start server.js",
+    "start": "webpack && pm2 start server/index.js",
     "end": "pm2 stop all"
   },
   "dependencies": {
