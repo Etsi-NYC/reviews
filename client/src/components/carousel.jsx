@@ -1,9 +1,5 @@
 import React from "react";
 import Slider from "react-slick";
-import styled from 'styled-components';
-// import "./../../../node_modules/slick-carousel/slick.css";
-// import "./../../../node_modules/slick-carousel/slick-theme.css";
-// import '../../dist/index.css'
 
 class Carousel extends React.Component {
   render() {
