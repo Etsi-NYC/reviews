@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Review from './components/review.jsx';
-import styled from 'styled-components';
 import StarRating from './components/starRating.jsx';
 import Carousel from './components/carousel.jsx'
 import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
-import axios from 'axios'
+import axios from 'axios';
+let styled = window.styled;
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
@@ -117,10 +117,9 @@ class Reviews extends React.Component {
     this.handleShowMoreClick = this.handleShowMoreClick.bind(this);
   }
   componentDidMount() {
+    let id = window.location.pathname.slice(9);
     axios.get('http://ec2-18-191-75-80.us-east-2.compute.amazonaws.com/reviews', {
-      params: {
-        id: 1
-      }
+      params: { id }
     })
     .then((response) => {
       this.setState({
