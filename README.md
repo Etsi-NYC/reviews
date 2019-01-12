@@ -1,41 +1,32 @@
-# Project Name
+# Etsi Reviews Service
 
-> Project description
+An interactive reviews component built using [React](https://reactjs.org/), [styled-components](https://www.styled-components.com/), [mySQL](https://www.mysql.com/), and [Express](http://expressjs.com/)
 
 ![Demo](https://imgur.com/LTIxP4c.gif)
 
-## Related Projects
+#### [Deployment](http://ec2-54-174-123-146.compute-1.amazonaws.com:3001/)
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+## Getting Started
 
-## Table of Contents
-
-1. [Usage](#Usage)
-1. [Requirements](#requirements)
-1. [Development](#development)
-
-## Usage
-
-> Some usage instructions
-
-## Requirements
-
-An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
-
-- Node 6.13.0
-- etc
-
-## Development
-
-### Installing Dependencies
-
-From within the root directory:
-
-```sh
-npm install -g webpack
-npm install
 ```
+npm install
+npm run build
+npm run start
+```
+Then navigate to [http://localhost:3001](http://localhost:3001).
 
+## Author
+
+- **Wyatt Troia** - [Github](https://github.com/wyatt-troia)
+
+## Acknowledgments
+
+- [ChartJS](https://www.chartjs.org/)
+- [React](https://reactjs.org/)
+- [react-dates](https://github.com/airbnb/react-dates)
+- [Express](http://expressjs.com/)
+- [Coindesk](https://www.coindesk.com/price/bitcoin)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/wyatt-troia/mini-apps/blob/master/LICENSE.md) file for details.
