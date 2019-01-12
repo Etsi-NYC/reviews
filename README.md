@@ -21,11 +21,10 @@ Then navigate to [http://localhost:3001](http://localhost:3001).
 
 ## Acknowledgments
 
-- [ChartJS](https://www.chartjs.org/)
 - [React](https://reactjs.org/)
-- [react-dates](https://github.com/airbnb/react-dates)
+- [styled-components](https://www.styled-components.com/)
+- [mySQL](https://www.mysql.com/)
 - [Express](http://expressjs.com/)
-- [Coindesk](https://www.coindesk.com/price/bitcoin)
 
 ## License
 
