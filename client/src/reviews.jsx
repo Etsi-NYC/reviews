@@ -158,10 +158,5 @@ class Reviews extends React.Component {
   }
 }
 
-module.exports = {
-  Reviews,
-  MoreLink,
-  AllReviewsButton,
-  ReviewDiv
-}
+export default Reviews
 
