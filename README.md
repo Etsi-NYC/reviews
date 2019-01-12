@@ -1,6 +1,6 @@
 # Etsi Reviews Service
 
-An Airbnb-inspired interactive reviews component built using [React](https://reactjs.org/), [react-slick](https://react-slick.neostack.com/), [styled-components](https://www.styled-components.com/), [mySQL](https://www.mysql.com/), and [Express](http://expressjs.com/)
+An Airbnb-inspired interactive reviews component built using [React](https://reactjs.org/), [react-slick](https://react-slick.neostack.com/), [styled-components](https://www.styled-components.com/), [mySQL](https://www.mysql.com/), and [Express](http://expressjs.com/).
 
 ![Demo](https://imgur.com/LTIxP4c.gif)
 
