@@ -1,6 +1,6 @@
 # Etsi Reviews Service
 
-An interactive reviews component inspired by Airbnb's UI, built using [React](https://reactjs.org/), [styled-components](https://www.styled-components.com/), [mySQL](https://www.mysql.com/), and [Express](http://expressjs.com/)
+An interactive reviews component inspired by Airbnb's UI, built using [React](https://reactjs.org/), [react-slick](https://react-slick.neostack.com/), [styled-components](https://www.styled-components.com/), [mySQL](https://www.mysql.com/), and [Express](http://expressjs.com/)
 
 ![Demo](https://imgur.com/LTIxP4c.gif)
 
@@ -22,6 +22,7 @@ Then navigate to [http://localhost:3001](http://localhost:3001).
 ## Acknowledgments
 
 - [React](https://reactjs.org/)
+- [react-slick](https://react-slick.neostack.com/)
 - [styled-components](https://www.styled-components.com/)
 - [mySQL](https://www.mysql.com/)
 - [Express](http://expressjs.com/)
