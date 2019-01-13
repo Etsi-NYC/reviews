@@ -5,7 +5,7 @@ An Airbnb-inspired interactive reviews component built using [React](https://rea
 ![Demo](https://imgur.com/LTIxP4c.gif)
 
 #### [Deployment](http://13.59.194.157:3001/?id=1)
-Tip: Change the id parameter in the URL to display data for different items.
+Tip: Change the id parameter in the URL to any number from 0 through 99 to display data for different items.
 
 ## Related Projects
 
