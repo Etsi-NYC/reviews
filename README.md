@@ -4,13 +4,13 @@ An Airbnb-inspired interactive reviews component built using [React](https://rea
 
 ![Demo](https://imgur.com/LTIxP4c.gif)
 
-#### [Deployment](http://ec2-54-174-123-146.compute-1.amazonaws.com:3001/)
+#### [Deployment](http://13.59.194.157:3001/?id=1)
 
 ## Getting Started
 
 ```
 npm install
-npm run build
+npm run seed // seeds database
 npm run start
 ```
 Then navigate to [http://localhost:3001](http://localhost:3001).
