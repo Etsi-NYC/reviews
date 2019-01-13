@@ -8,6 +8,8 @@ An Airbnb-inspired interactive reviews component built using [React](https://rea
 
 ## Getting Started
 
+This project requires a local mySQL server to be running.
+
 ```
 npm install
 npm run seed // seeds database
