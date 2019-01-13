@@ -1,6 +1,6 @@
 # Etsi Reviews Service
 
-An Airbnb-inspired interactive reviews component built using [React](https://reactjs.org/), [react-slick](https://react-slick.neostack.com/), [styled-components](https://www.styled-components.com/), [mySQL](https://www.mysql.com/), and [Express](http://expressjs.com/). This one of three services that feed into the [Etsi listing page](https://github.com/Etsi-NYC/Etsi).
+An Airbnb-inspired interactive reviews component built using [React](https://reactjs.org/), [react-slick](https://react-slick.neostack.com/), [styled-components](https://www.styled-components.com/), [mySQL](https://www.mysql.com/), and [Express](http://expressjs.com/). This one of three services that the [Etsi Proxy Server](https://github.com/Etsi-NYC/Etsi) integrates into a listing page.
 
 ![Demo](https://imgur.com/LTIxP4c.gif)
 
@@ -37,4 +37,4 @@ Then navigate to [http://localhost:3001](http://localhost:3001).
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/wyatt-troia/mini-apps/blob/master/LICENSE.md) file for details.
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/Etsi-NYC/reviews/blob/master/LICENSE) file for details.
